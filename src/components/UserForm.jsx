@@ -69,7 +69,7 @@ const UserForm = (props) => {
         }
         if(confirmPassword!== password) {
             setPassCheckError("Passwords do not match!")
-        } else {
+        } else if(confirmPassword == password){
             setPassCheckError("")
         }
     }
