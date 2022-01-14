@@ -11,7 +11,7 @@ const UserForm = (props) => {
     const [LNameError, setLNameError] = useState("");
     const [EmailError, setEmailError] = useState("");
     const [PasswordError, setPasswordError] = useState("");
-    const [ConPasswordError, setConPasswordError, setPassCheckError] = useState("");
+    const [ConPasswordError , setConPasswordError] = useState("");
     
     
     const handleFName = (e) => {
@@ -60,17 +60,11 @@ const UserForm = (props) => {
 
     const handleConPassword = (e) => {
         setConPassword(e.target.value);
-        if(e.target.value.length < 1) {
+        if(e.target.value !== password) {
+            console.log(password, confirmPassword)
+            setConPasswordError("Passwords do not match!")
+        } else {
             setConPasswordError("")
-        } else if(e.target.value.length < 8) {
-            setConPasswordError("Password must be at least 8 characters!")
-        } else if(e.target.value.length >= 8) {
-            setConPasswordError("")
-        }
-        if(confirmPassword!== password) {
-            setPassCheckError("Passwords do not match!")
-        } else if(confirmPassword == password){
-            setPassCheckError("")
         }
     }
     
