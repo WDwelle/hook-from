@@ -13,9 +13,9 @@ const UserForm = (props) => {
     const [PasswordError, setPasswordError] = useState("");
     const [ConPasswordError , setConPasswordError] = useState("");
     
-    
+//===check names length
     const handleFName = (e) => {
-        setFirstName(e.target.value);
+        setFirstName(e.target.value);//SET
         if(e.target.value.length < 1) {
             setFNameError("")
         } else if(e.target.value.length < 2) {
@@ -26,7 +26,7 @@ const UserForm = (props) => {
     }
 
     const handleLName = (e) => {
-        setLastName(e.target.value);
+        setLastName(e.target.value);//SET
         if(e.target.value.length < 1) {
             setLNameError("")
         } else if(e.target.value.length < 2) {
@@ -35,9 +35,9 @@ const UserForm = (props) => {
             setLNameError("")
         }
     }
-
+//===check email length
     const handleEmail = (e) => {
-        setEmail(e.target.value);
+        setEmail(e.target.value);//SET
         if(e.target.value.length < 1) {
             setEmailError("")
         } else if(e.target.value.length < 5) {
@@ -46,9 +46,9 @@ const UserForm = (props) => {
             setEmailError("")
         }
     }
-
+//===check password length
     const handlePassword = (e) => {
-        setPassword(e.target.value);
+        setPassword(e.target.value);//SET
         if(e.target.value.length < 1) {
             setPasswordError("")
         } else if(e.target.value.length < 8) {
@@ -57,10 +57,10 @@ const UserForm = (props) => {
             setPasswordError("")
         }
     }
-
+//===check password match
     const handleConPassword = (e) => {
-        setConPassword(e.target.value);
-        if(e.target.value !== password) {
+        setConPassword(e.target.value);//SET
+        if(e.target.value !== password) {//Check values against each other (Use e.target.value or check will run asynchronous)
             console.log(password, confirmPassword)
             setConPasswordError("Passwords do not match!")
         } else {
@@ -116,5 +116,5 @@ const UserForm = (props) => {
         </div>
     );
 };
-    
+
 export default UserForm;
